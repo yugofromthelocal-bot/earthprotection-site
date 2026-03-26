@@ -1,0 +1,507 @@
+/* ===========================
+   リセット・基本設定
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  color: #3b2e1e;
+  background-color: #faf8f3;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===========================
+   共通パーツ
+=========================== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* セクション共通 */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #3b2e1e;
+}
+
+.section-title.white {
+  color: #fff;
+}
+
+.section-desc {
+  text-align: center;
+  color: #6b5744;
+  font-size: 1rem;
+  margin-bottom: 48px;
+  line-height: 1.9;
+}
+
+/* CTAボタン */
+.btn-primary {
+  display: inline-block;
+  background-color: #5a7a4a;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #3e5c34;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   ナビゲーション
+=========================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(250, 248, 243, 0.95);
+  border-bottom: 1px solid #e0d8cb;
+  z-index: 100;
+}
+
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3b7a47;
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  color: #5a4a3a;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #3b7a47;
+}
+
+/* ===========================
+   1. ヒーローセクション
+=========================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d5a27 0%, #4a7c40 40%, #7a9e5a 70%, #c8a96e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 40, 15, 0.35);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: #d4e8c8;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.hero-catch {
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  color: #e8f5e0;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.hero-desc {
+  font-size: 0.95rem;
+  color: #cfe0c4;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+/* ===========================
+   2. 事業紹介セクション
+=========================== */
+.business {
+  background-color: #faf8f3;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #e8dfd0;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(90, 70, 50, 0.12);
+}
+
+.card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3b2e1e;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6b5744;
+  line-height: 1.85;
+}
+
+/* ===========================
+   3. ビジョンセクション
+=========================== */
+.vision {
+  background: linear-gradient(135deg, #2d5a27 0%, #3d6e35 60%, #527a42 100%);
+}
+
+.vision-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.vision-lead {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #d4e8c8;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.vision-body {
+  font-size: 0.95rem;
+  color: #c5dab8;
+  margin-bottom: 18px;
+  line-height: 2;
+}
+
+.vision-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-quote blockquote {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.8;
+  border-left: 4px solid #8fc47a;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0 12px 12px 0;
+}
+
+/* ===========================
+   4. 収益循環の仕組みセクション
+=========================== */
+.cycle {
+  background-color: #f5f0e8;
+}
+
+.cycle-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.cycle-step {
+  background-color: #fff;
+  border: 1px solid #e0d5c5;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  width: 180px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cycle-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(90, 70, 50, 0.1);
+}
+
+.cycle-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.cycle-step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3b2e1e;
+  margin-bottom: 8px;
+}
+
+.cycle-step-desc {
+  font-size: 0.8rem;
+  color: #6b5744;
+  line-height: 1.7;
+}
+
+.cycle-arrow {
+  font-size: 2rem;
+  color: #8aaf72;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.cycle-note {
+  text-align: center;
+  background-color: #e8f0e0;
+  border-radius: 50px;
+  padding: 14px 32px;
+  display: inline-block;
+  width: 100%;
+}
+
+.cycle-note p {
+  color: #4a6e3a;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ===========================
+   5. お問い合わせセクション
+=========================== */
+.contact {
+  background-color: #faf8f3;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3b2e1e;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid #d0c4b0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #3b2e1e;
+  background-color: #fff;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #5a7a4a;
+  box-shadow: 0 0 0 3px rgba(90, 122, 74, 0.15);
+}
+
+.contact-form .btn-primary {
+  align-self: center;
+  padding: 14px 48px;
+}
+
+/* ===========================
+   フッター
+=========================== */
+.footer {
+  background-color: #2a3d22;
+  padding: 48px 0;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #8fc47a;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #a0b890;
+  margin-bottom: 16px;
+}
+
+.footer-cr {
+  font-size: 0.8rem;
+  color: #5a7a52;
+}
+
+/* ===========================
+   レスポンシブ対応
+=========================== */
+
+/* タブレット（768px以下） */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding: 100px 24px 60px;
+  }
+
+  .vision-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .vision-lead {
+    font-size: 1.3rem;
+  }
+
+  .cycle-flow {
+    gap: 16px;
+  }
+
+  .cycle-arrow {
+    transform: rotate(90deg);
+  }
+
+  .cycle-step {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* スマートフォン（480px以下） */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-catch {
+    font-size: 1.2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.88rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
+  .vision-quote blockquote {
+    font-size: 1.05rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
